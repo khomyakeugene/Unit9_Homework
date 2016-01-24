@@ -1,11 +1,15 @@
 package com.company.tests;
 
+import com.company.caesar.Caesar;
 import com.company.flowers.Bouquet;
 import com.company.flowers.Aster;
 import com.company.flowers.Chamomile;
 import com.company.flowers.Rose;
-import com.company.flowers.RoseBush;
 import com.company.flowers.Tulip;
+import com.company.utils.Collections;
+import com.company.utils.Utils;
+
+import java.util.ArrayList;
 
 /**
  * Created by Yevgen on 21.12.2015.
@@ -15,13 +19,12 @@ public class TestFlowerData {
     public final static String WHITE_COLOUR = "White";
     public final static String ROSE_COLOUR = "Rose";
     public final static String YELLOW_COLOUR = "Yellow";
-
-    public static final int ROSE_COUNT_IN_ROSEBUSH = 7;
+    public final static String ENCODED_DATA_MESSAGE = "Encoded data:";
+    public final static String DECODED_DATA_MESSAGE = "Decoded data:";
 
     private Bouquet bouquet = null;
-    private RoseBush roseBush = null;
 
-    private void collectBouguet() {
+    private void collectBouquet() {
         bouquet = new Bouquet(new Aster(RED_COLOUR));
 
         bouquet.addFlower(new Aster(WHITE_COLOUR));
@@ -38,26 +41,26 @@ public class TestFlowerData {
         bouquet.showFlowerSet();
     }
 
-    private void showRoseBush() {
-        roseBush.showFlowerSet();
-    }
-
     public void demonstrateBouquet() {
-        collectBouguet();
+        collectBouquet();
         showBouquet();
-    }
-
-    private void collectRosebush() {
-        roseBush = new RoseBush(ROSE_COLOUR, Rose.TYPICAL_ROSE_SCENT, true, ROSE_COUNT_IN_ROSEBUSH);
-    }
-
-    public void demonstrateRoseBush() {
-        collectRosebush();
-        showRoseBush();
     }
 
     public void demonstrateData() {
         demonstrateBouquet();
-        demonstrateRoseBush();
+
+        demonstrateEncipherAndDecipherData();
+    }
+
+    public void demonstrateEncipherAndDecipherData() {
+        // Encipher data using "Caesar method"
+        ArrayList<String> encodeArrayList = Caesar.encodeArrayListUsingDefaultShift(bouquet.getFlowers());
+        Utils.printMessage(ENCODED_DATA_MESSAGE);
+        Collections.printList(encodeArrayList);
+
+        // Decipher data using "Caesar method"
+        ArrayList<String> decodeArrayList = Caesar.decodeArrayListUsingDefaultShift(encodeArrayList);
+        Utils.printMessage(DECODED_DATA_MESSAGE);
+        Collections.printList(decodeArrayList);
     }
 }

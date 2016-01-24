@@ -9,8 +9,6 @@ import java.util.ArrayList;
  * Created by Yevgen on 21.12.2015.
  */
 public class FlowerSet {
-    public final static int TABLE_WIDTH = 60;
-
     private ArrayList<Flower> flowers;
 
     public FlowerSet() {
@@ -28,18 +26,8 @@ public class FlowerSet {
         flowers.add(flower);
     }
 
-    public Integer getFlowerCount() {
-        return flowers.size();
-    }
-
     public void showFlowerSet() {
-        Utils.printMessage(getClass().getName());
-
-        // Show as a list
+        Utils.printMessage(String.format("%s:",getClass().getName()));
         Collections.printList(getFlowers());
-
-        // Show as a table
-        String className = Utils.getClassName();
-        Collections.printListAsTable(getFlowers(), className, TABLE_WIDTH);
     }
 }
