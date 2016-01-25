@@ -11,8 +11,7 @@ public class Caesar {
     public final static int DIVIDER = UPPER_BOUND - LOWER_BOUND + 1;
     public final static int DEFAULT_SHIFT = 10;
 
-    public static String encodeString(String string, int shift) {
-        char[] chars = string.toCharArray();
+    public static char[] encodeChars(char[] chars, int shift) {
         for (int i=0; i < chars.length; i++) {
             // Just for the lower part of the ASCII code table; intentionally do not use "Character.isLetter.. and so on"
             // static methods family (at least, because of "Unicode approach" is using in methods like these)
@@ -22,11 +21,17 @@ public class Caesar {
             }
         }
 
-        return new String(chars);
+        return chars;
     }
 
-    public static String decodeString(String string, int shift) {
+    public static String encodeString(String string, int shift) {
         char[] chars = string.toCharArray();
+
+        return new String(encodeChars(chars, shift));
+    }
+
+
+    public static char[] decodeChars(char[] chars, int shift) {
         for (int i=0; i < chars.length; i++) {
             // Just for the lower part of the ASCII code table; intentionally do not use "Character.isLetter.. and so on"
             // static methods family (at least, because of "Unicode approach" is using in methods like these)
@@ -38,7 +43,13 @@ public class Caesar {
             }
         }
 
-        return new String(chars);
+        return chars;
+    }
+
+    public static String decodeString(String string, int shift) {
+        char[] chars = string.toCharArray();
+
+        return new String(decodeChars(chars, shift));
     }
 
     public static ArrayList encodeArrayList(ArrayList sourceList, int shift) {
