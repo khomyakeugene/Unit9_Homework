@@ -12,7 +12,7 @@ public class FlowerSet {
     private ArrayList<Flower> flowers;
 
     public FlowerSet() {
-        super();
+        super(); //излишне, это происходит по-умолчанию (если конструктор без параметров)
 
         // Init "bouquet space"
         flowers = new ArrayList<>();

@@ -6,7 +6,7 @@ import java.util.AbstractCollection;
  * Created by Yevgen on 17.01.2016 as a part of the project "Unit8_Homework".
  */
 public class Collections {
-    public static void printList(AbstractCollection list) {
+    public static void printList(AbstractCollection list) { //без параметризации коллекции требует type cast
         list
                 .stream()
                 .forEach(p -> Utils.printMessage(p.toString()));

@@ -22,7 +22,7 @@ public class TestFlowerData {
     public final static String ENCODED_DATA_MESSAGE = "Encoded data:";
     public final static String DECODED_DATA_MESSAGE = "Decoded data:";
 
-    private Bouquet bouquet = null;
+    private Bouquet bouquet = null; //не нужна полю класса инициализация нулом, она по-умолчанию.
 
     private void collectBouquet() {
         bouquet = new Bouquet(new Aster(RED_COLOUR));
@@ -46,7 +46,8 @@ public class TestFlowerData {
         showBouquet();
     }
 
-    public void demonstrateData() {
+    public void demonstrateData() { //и все-таки удобней (и по конвенции) смотреть, когда ранее вызваные публичные методы
+        //находятся выше, а те, методы, что вызываются из них - ниже, под ними.
         demonstrateBouquet();
 
         demonstrateEncipherAndDecipherData();
