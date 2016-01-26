@@ -53,8 +53,8 @@ public class Caesar {
         return new String(decodeChars(chars, shift));
     }
 
-    public static ArrayList encodeArrayList(List sourceList, int shift) {
-        ArrayList resultList = new ArrayList<>();
+    public static ArrayList<String> encodeArrayList(List sourceList, int shift) {
+        ArrayList<String> resultList = new ArrayList<>();
 
         if (sourceList != null) {
             sourceList
@@ -65,12 +65,12 @@ public class Caesar {
         return resultList;
     }
 
-    public static ArrayList encodeArrayListUsingDefaultShift(List sourceData) {
+    public static ArrayList<String>  encodeArrayListUsingDefaultShift(List sourceData) {
         return encodeArrayList(sourceData, DEFAULT_SHIFT);
     }
 
-    public static ArrayList decodeArrayList(List sourceList, int shift) {
-        ArrayList resultList = new ArrayList<>();
+    public static ArrayList<String> decodeArrayList(List sourceList, int shift) {
+        ArrayList<String> resultList = new ArrayList<>();
 
         if (sourceList != null) {
             sourceList
@@ -81,7 +81,7 @@ public class Caesar {
         return resultList;
     }
 
-    public static ArrayList decodeArrayListUsingDefaultShift(List sourceData) {
+    public static ArrayList<String> decodeArrayListUsingDefaultShift(List sourceData) {
         return decodeArrayList(sourceData, DEFAULT_SHIFT);
     }
 }
