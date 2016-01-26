@@ -56,9 +56,11 @@ public class Caesar {
     public static ArrayList encodeArrayList(List sourceList, int shift) {
         ArrayList resultList = new ArrayList<>();
 
-        sourceList
-                .stream()
-                .forEach(f -> resultList.add(encodeString(f.toString(), shift)));
+        if (sourceList != null) {
+            sourceList
+                    .stream()
+                    .forEach(f -> resultList.add(encodeString(f.toString(), shift)));
+        }
 
         return resultList;
     }
@@ -70,9 +72,11 @@ public class Caesar {
     public static ArrayList decodeArrayList(List sourceList, int shift) {
         ArrayList resultList = new ArrayList<>();
 
-        sourceList
-                .stream()
-                .forEach(f -> resultList.add(decodeString(f.toString(), shift)));
+        if (sourceList != null) {
+            sourceList
+                    .stream()
+                    .forEach(f -> resultList.add(decodeString(f.toString(), shift)));
+        }
 
         return resultList;
     }
