@@ -10,6 +10,7 @@ import com.company.utils.Collections;
 import com.company.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Yevgen on 21.12.2015.
@@ -22,7 +23,7 @@ public class TestFlowerData {
     public final static String ENCODED_DATA_MESSAGE = "Encoded data:";
     public final static String DECODED_DATA_MESSAGE = "Decoded data:";
 
-    private Bouquet bouquet = null; //не нужна полю класса инициализация нулом, она по-умолчанию.
+    private Bouquet bouquet;
 
     private void collectBouquet() {
         bouquet = new Bouquet(new Aster(RED_COLOUR));
@@ -46,22 +47,22 @@ public class TestFlowerData {
         showBouquet();
     }
 
-    public void demonstrateData() { //и все-таки удобней (и по конвенции) смотреть, когда ранее вызваные публичные методы
-        //находятся выше, а те, методы, что вызываются из них - ниже, под ними.
-        demonstrateBouquet();
-
-        demonstrateEncipherAndDecipherData();
-    }
-
     public void demonstrateEncipherAndDecipherData() {
         // Encipher data using "Caesar method"
-        ArrayList<String> encodeArrayList = Caesar.encodeArrayListUsingDefaultShift(bouquet.getFlowers());
+        ArrayList<String> encodeArrayList = Caesar.encodeListUsingDefaultShift(bouquet.getFlowers());
         Utils.printMessage(ENCODED_DATA_MESSAGE);
         Collections.printList(encodeArrayList);
 
         // Decipher data using "Caesar method"
-        ArrayList<String> decodeArrayList = Caesar.decodeArrayListUsingDefaultShift(encodeArrayList);
+        ArrayList<String> decodeArrayList = Caesar.decodeListUsingDefaultShift(encodeArrayList);
         Utils.printMessage(DECODED_DATA_MESSAGE);
         Collections.printList(decodeArrayList);
+    }
+
+
+    public void demonstrateData() {
+        demonstrateBouquet();
+
+        demonstrateEncipherAndDecipherData();
     }
 }

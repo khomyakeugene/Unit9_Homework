@@ -10,13 +10,11 @@ public class Flower {
     public final static String WITHOUT_SCENT_MESSAGE = "without scent";
     public final static String FLOWER_DESCRIPTION_MESSAGE = "flower: {0}, colour: {1}, scent: {2}";
 
-    private String flowerType = null;//излишнее присваивание нула
-    private String colour = null;
-    private String scent = null;
+    private String flowerType;
+    private String colour;
+    private String scent;
 
     public Flower(String flowerType, String colour, String scent) {
-        super();
-
         setFlowerType(flowerType);//сетить можно без вызова метода типа this.flowerType = flowerType;
         //не принципиально, просто привычней.
         setColour(colour);

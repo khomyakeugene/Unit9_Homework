@@ -9,16 +9,14 @@ import java.util.ArrayList;
  * Created by Yevgen on 21.12.2015.
  */
 public class FlowerSet {
-    private ArrayList<Flower> flowers;
+    private ArrayList<Object> flowers;
 
     public FlowerSet() {
-        super(); //излишне, это происходит по-умолчанию (если конструктор без параметров)
-
         // Init "bouquet space"
         flowers = new ArrayList<>();
     }
 
-    public ArrayList<Flower> getFlowers() {
+    public ArrayList<Object> getFlowers() {
         return flowers;
     }
 

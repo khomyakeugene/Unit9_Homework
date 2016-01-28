@@ -13,7 +13,7 @@ public class Caesar {
     public final static int DEFAULT_SHIFT = 10;
 
     public static char[] encodeChars(char[] chars, int shift) {
-        for (int i=0; i < chars.length; i++) { //пробелы между оператором и операндами i=0
+        for (int i = 0; i < chars.length; i++) {
             // Just for the lower part of the ASCII code table; intentionally do not use "Character.isLetter.. and so on"
             // static methods family (at least, because of "Unicode approach" is using in methods like these)
             if (chars[i] >= LOWER_BOUND && chars[i] <= UPPER_BOUND) {
@@ -33,7 +33,7 @@ public class Caesar {
 
 
     public static char[] decodeChars(char[] chars, int shift) {
-        for (int i=0; i < chars.length; i++) {
+        for (int i = 0; i < chars.length; i++) {
             // Just for the lower part of the ASCII code table; intentionally do not use "Character.isLetter.. and so on"
             // static methods family (at least, because of "Unicode approach" is using in methods like these)
             if (chars[i] >= LOWER_BOUND && chars[i] <= UPPER_BOUND) {
@@ -53,7 +53,7 @@ public class Caesar {
         return new String(decodeChars(chars, shift));
     }
 
-    public static ArrayList<String> encodeArrayList(List sourceList, int shift) {//непараметризированный лист вызывает
+    public static ArrayList<String> encodeList(List sourceList, int shift) {//непараметризированный лист вызывает
         //недоверие Идеи, может вызвать эксепшн, и просто является устаревшим приемом. Можем мы его указать с пармаетром - List<Flower>?
         //или если ты хочешь сделать его универсальным, тогда надо проверять type cast. Может с дженериком T?
         ArrayList<String> resultList = new ArrayList<>();
@@ -67,12 +67,12 @@ public class Caesar {
         return resultList;
     }
 
-    public static ArrayList<String>  encodeArrayListUsingDefaultShift(List sourceData) { //нашла этот метод-посредник излишним
-        //к константе можно обратиться непосредственно в методе encodeArrayList
-        return encodeArrayList(sourceData, DEFAULT_SHIFT);
+    public static ArrayList<String> encodeListUsingDefaultShift(List sourceData) { //нашла этот метод-посредник излишним
+        //к константе можно обратиться непосредственно в методе encodeList
+        return encodeList(sourceData, DEFAULT_SHIFT);
     }
 
-    public static ArrayList<String> decodeArrayList(List sourceList, int shift) {//аналогично encode...
+    public static ArrayList<String> decodeList(List sourceList, int shift) {//аналогично encode...
         ArrayList<String> resultList = new ArrayList<>();
 
         if (sourceList != null) {
@@ -84,7 +84,7 @@ public class Caesar {
         return resultList;
     }
 
-    public static ArrayList<String> decodeArrayListUsingDefaultShift(List sourceData) { //аналогично encode...
-        return decodeArrayList(sourceData, DEFAULT_SHIFT);
+    public static ArrayList<String> decodeListUsingDefaultShift(List sourceData) { //аналогично encode...
+        return decodeList(sourceData, DEFAULT_SHIFT);
     }
 }
