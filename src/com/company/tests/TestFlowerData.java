@@ -10,7 +10,6 @@ import com.company.utils.Collections;
 import com.company.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Yevgen on 21.12.2015.

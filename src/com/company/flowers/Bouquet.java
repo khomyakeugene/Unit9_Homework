@@ -5,8 +5,6 @@ package com.company.flowers;
  */
 public class Bouquet extends FlowerSet {
     public Bouquet(Flower firstFlowerInBouquet) {
-        super();
-
         // Add at least one flower
         addFlower(firstFlowerInBouquet);
     }

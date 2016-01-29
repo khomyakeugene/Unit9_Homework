@@ -15,8 +15,8 @@ public class Flower {
     private String scent;
 
     public Flower(String flowerType, String colour, String scent) {
-        setFlowerType(flowerType);//сетить можно без вызова метода типа this.flowerType = flowerType;
-        //не принципиально, просто привычней.
+        // Use "setters" here only as a demonstration of the ability of encapsulation and polymorphism
+        setFlowerType(flowerType);
         setColour(colour);
         setScent(scent);
     }
@@ -55,7 +55,7 @@ public class Flower {
 
     @Override
     public String toString() {
+        // Use "getters" here only as a demonstration of the ability of encapsulation and polymorphism
         return MessageFormat.format(FLOWER_DESCRIPTION_MESSAGE, getFlowerType(), getColour(), getScent());
-        //также можно обращаться к полям класса без геттеров.
     }
 }
