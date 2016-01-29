@@ -53,6 +53,7 @@ public class Caesar {
         return new String(decodeChars(chars, shift));
     }
 
+    // To have the possibility to manipulate the "shift-parameter" from outside ...
     public static ArrayList<String> encodeList(List sourceList, int shift) {//непараметризированный лист вызывает
         //недоверие Идеи, может вызвать эксепшн, и просто является устаревшим приемом. Можем мы его указать с пармаетром - List<Flower>?
         //или если ты хочешь сделать его универсальным, тогда надо проверять type cast. Может с дженериком T?
@@ -67,11 +68,12 @@ public class Caesar {
         return resultList;
     }
 
-    public static ArrayList<String> encodeListUsingDefaultShift(List sourceData) { //нашла этот метод-посредник излишним
-        //к константе можно обратиться непосредственно в методе encodeList
+    // To have the possibility to hide the "shift-parameter"
+    public static ArrayList<String> encodeListUsingDefaultShift(List sourceData) {
         return encodeList(sourceData, DEFAULT_SHIFT);
     }
 
+    // To have the possibility to manipulate the "shift-parameter" from outside ...
     public static ArrayList<String> decodeList(List sourceList, int shift) {//аналогично encode...
         ArrayList<String> resultList = new ArrayList<>();
 
@@ -84,6 +86,7 @@ public class Caesar {
         return resultList;
     }
 
+    // To have the possibility to hide the "shift-parameter"
     public static ArrayList<String> decodeListUsingDefaultShift(List sourceData) { //аналогично encode...
         return decodeList(sourceData, DEFAULT_SHIFT);
     }
