@@ -9,7 +9,8 @@ import java.util.ArrayList;
  * Created by Yevgen on 21.12.2015.
  */
 public class FlowerSet {
-    private ArrayList<Object> flowers;
+    private ArrayList<Object> flowers; //почему поменял на обджект? чем мешала конкретика Flower? И выходит, что в сет цветов
+    //можно засунуть какие-угодно объекты.
 
     public FlowerSet() {
         // Init "bouquet space"
