@@ -54,9 +54,7 @@ public class Caesar {
     }
 
     // To have the possibility to manipulate the "shift-parameter" from outside ...
-    public static ArrayList<String> encodeList(List sourceList, int shift) {//непараметризированный лист вызывает
-        //недоверие Идеи, может вызвать эксепшн, и просто является устаревшим приемом. Можем мы его указать с пармаетром - List<Flower>?
-        //или если ты хочешь сделать его универсальным, тогда надо проверять type cast. Может с дженериком T?
+    public static ArrayList<String> encodeList(List<? extends Object> sourceList, int shift) {
         ArrayList<String> resultList = new ArrayList<>();
 
         if (sourceList != null) {
@@ -69,12 +67,12 @@ public class Caesar {
     }
 
     // To have the possibility to hide the "shift-parameter"
-    public static ArrayList<String> encodeListUsingDefaultShift(List sourceData) {
+    public static ArrayList<String> encodeListUsingDefaultShift(List<? extends Object> sourceData) {
         return encodeList(sourceData, DEFAULT_SHIFT);
     }
 
     // To have the possibility to manipulate the "shift-parameter" from outside ...
-    public static ArrayList<String> decodeList(List sourceList, int shift) {//аналогично encode...
+    public static ArrayList<String> decodeList(List<? extends Object> sourceList, int shift) {
         ArrayList<String> resultList = new ArrayList<>();
 
         if (sourceList != null) {
@@ -87,7 +85,7 @@ public class Caesar {
     }
 
     // To have the possibility to hide the "shift-parameter"
-    public static ArrayList<String> decodeListUsingDefaultShift(List sourceData) { //аналогично encode...
+    public static ArrayList<String> decodeListUsingDefaultShift(List<? extends Object> sourceData) {
         return decodeList(sourceData, DEFAULT_SHIFT);
     }
 }
