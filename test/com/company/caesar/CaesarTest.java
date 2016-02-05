@@ -3,11 +3,19 @@ package com.company.caesar;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 /**
  * Created by Yevgen on 05.02.2016 as a part of the project "Unit9_Homework".
  */
 public class CaesarTest {
     public final static int TEST_SHIFT = 20;
+
+    public void assertArrayListEquals(ArrayList<? extends Object> expecteds, ArrayList<? extends Object> actuals) {
+//        expecteds
+//                .stream()
+//                .forEach(f -> resultList.add(encodeString(f.toString(), shift)));
+    }
 
     @Test (timeout = 1000)
     public void testEncodeChars() throws Exception {
@@ -49,21 +57,35 @@ public class CaesarTest {
 
     @Test (timeout = 1000)
     public void testEncodeList() throws Exception {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("The Changeling");
+        arrayList.add("Love Her Madly");
+        arrayList.add("Been Down So Long");
+        arrayList.add("Cars Hiss by My Window");
+        arrayList.add("L.A. Woman");
+        arrayList.add("L'America");
+        arrayList.add("Hyacinth House");
+        arrayList.add("Crawling King Snake");
+        arrayList.add("The WASP (Texas Radio and the Big Beat)");
+        arrayList.add("Riders on the Storm");
 
     }
 
     @Test (timeout = 1000)
     public void testEncodeListUsingDefaultShift() throws Exception {
+        ArrayList<String> arrayList = new ArrayList<>();
 
     }
 
     @Test (timeout = 1000)
     public void testDecodeList() throws Exception {
+        ArrayList<String> arrayList = new ArrayList<>();
 
     }
 
     @Test (timeout = 1000)
     public void testDecodeListUsingDefaultShift() throws Exception {
+        ArrayList<String> arrayList = new ArrayList<>();
 
     }
 }
