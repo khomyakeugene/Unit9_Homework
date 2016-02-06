@@ -1,12 +1,14 @@
 package com.company.caesar;
 
 import com.company.flowers.*;
-import com.company.utils.TestUtil;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
+
+import static com.company.utils.TestUtil.assertArrayListEquals;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Yevgen on 05.02.2016 as a part of the project "Unit9_Homework".
@@ -54,7 +56,7 @@ public class CaesarTest {
         final char[] expectedResult = {'u', '\'', 'x', 'z', '{', '|', '~'};
 
         final char[] result = Caesar.encodeChars(sourceChars, TEST_SHIFT);
-        Assert.assertArrayEquals(expectedResult, result);
+        assertArrayEquals(expectedResult, result);
     }
 
     @Test (timeout = 1000)
@@ -63,7 +65,7 @@ public class CaesarTest {
         final String result = Caesar.encodeString(sourceString, TEST_SHIFT);
 
         final String expectedResult = "dy#$ y4u&y4'(&u\"{y4+|y\"4-#);&y4u4'(&u\"{y&4Zuwy'4 ##\u007F4){ -4+|y\"4-#);&y4u #\"y4BBB";
-        Assert.assertEquals(expectedResult, result);
+        assertEquals(expectedResult, result);
     }
 
     @Test (timeout = 1000)
@@ -73,7 +75,7 @@ public class CaesarTest {
         final char[] result = Caesar.decodeChars(sourceChars, TEST_SHIFT);
 
         final char[] expectedResult = {'M', 'y', ' ', 'w', 'i', 'l', 'd', ' ', 'l', 'o', 'v', 'e'};
-        Assert.assertArrayEquals(expectedResult, result);
+        assertArrayEquals(expectedResult, result);
     }
 
     @Test (timeout = 1000)
@@ -82,7 +84,7 @@ public class CaesarTest {
         final String result = Caesar.decodeString(sourceString, TEST_SHIFT);
 
         final String expectedResult = "Moon of Alabama";
-        Assert.assertEquals(expectedResult, result);
+        assertEquals(expectedResult, result);
     }
 
     @Test (timeout = 1000)
@@ -100,7 +102,7 @@ public class CaesarTest {
         expected.add("z #+y&N4f#'y@4w# #)&N4f#'y@4'wy\"(N4h-$}wu 4&#'y4'wy\"(@4(|#&\"'4$&y'y\"(N4zu 'y");
         expected.add("z #+y&N4f#'y@4w# #)&N4fyx@4'wy\"(N4h-$}wu 4&#'y4'wy\"(@4(|#&\"'4$&y'y\"(N4(&)y");
 
-        TestUtil.assertArrayListEquals(expected, result);
+        assertArrayListEquals(expected, result);
     }
 
     @Test (timeout = 1000)
@@ -118,7 +120,7 @@ public class CaesarTest {
         expected.add("pvy!o|D*\\y}o6*myvy|D*\\y}o6*}mox~D*^#zsmkv*|y}o*}mox~6*~ry|x}*z|o}ox~D*pkv}o");
         expected.add("pvy!o|D*\\y}o6*myvy|D*\\on6*}mox~D*^#zsmkv*|y}o*}mox~6*~ry|x}*z|o}ox~D*~|o");
 
-        TestUtil.assertArrayListEquals(expected, result);
+        assertArrayListEquals(expected, result);
     }
 
     @Test (timeout = 1000)
@@ -133,7 +135,7 @@ public class CaesarTest {
         expected.add("flower: Chamomile, colour: White, scent: without scent");
         expected.add("flower: Aster, colour: Yellow, scent: without scent");
 
-        TestUtil.assertArrayListEquals(expected, result);
+        assertArrayListEquals(expected, result);
     }
 
     @Test (timeout = 1000)
@@ -148,6 +150,6 @@ public class CaesarTest {
         expected.add("flower: Chamomile, colour: White, scent: without scent");
         expected.add("flower: Chamomile, colour: Yellow, scent: without scent");
 
-        TestUtil.assertArrayListEquals(expected, result);
+        assertArrayListEquals(expected, result);
     }
 }
