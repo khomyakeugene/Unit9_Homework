@@ -1,11 +1,7 @@
 package com.company.tests;
 
 import com.company.caesar.Caesar;
-import com.company.flowers.Bouquet;
-import com.company.flowers.Aster;
-import com.company.flowers.Chamomile;
-import com.company.flowers.Rose;
-import com.company.flowers.Tulip;
+import com.company.flowers.*;
 import com.company.utils.Collections;
 import com.company.utils.Utils;
 
@@ -26,7 +22,6 @@ public class TestFlowerData {
 
     private void collectBouquet() {
         bouquet = new Bouquet(new Aster(RED_COLOUR));
-
         bouquet.addFlower(new Aster(WHITE_COLOUR));
         bouquet.addFlower(new Tulip(RED_COLOUR));
         bouquet.addFlower(new Tulip(ROSE_COLOUR));
