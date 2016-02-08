@@ -53,10 +53,11 @@ public class CaesarTest {
     @Test (timeout = 1000)
     public void testEncodeChars() throws Exception {
         final char[] sourceChars = {'a', 's', 'd', 'f', 'g', 'h', 'j'};
-        final char[] expectedResult = {'u', '\'', 'x', 'z', '{', '|', '~'};
 
         final char[] result = Caesar.encodeChars(sourceChars, TEST_SHIFT);
-        assertArrayEquals(expectedResult, result);
+
+        final char[] expected = {'u', '\'', 'x', 'z', '{', '|', '~'};
+        assertArrayEquals(expected, result);
     }
 
     @Test (timeout = 1000)
@@ -64,8 +65,8 @@ public class CaesarTest {
         final String sourceString = "People are strange when you're a stranger Faces look ugly when you're alone ...";
         final String result = Caesar.encodeString(sourceString, TEST_SHIFT);
 
-        final String expectedResult = "dy#$ y4u&y4'(&u\"{y4+|y\"4-#);&y4u4'(&u\"{y&4Zuwy'4 ##\u007F4){ -4+|y\"4-#);&y4u #\"y4BBB";
-        assertEquals(expectedResult, result);
+        final String expected = "dy#$ y4u&y4'(&u\"{y4+|y\"4-#);&y4u4'(&u\"{y&4Zuwy'4 ##\u007F4){ -4+|y\"4-#);&y4u #\"y4BBB";
+        assertEquals(expected, result);
     }
 
     @Test (timeout = 1000)
@@ -74,8 +75,8 @@ public class CaesarTest {
                 {'a', '-', '4', '+', '}', ' ', 'x', '4', ' ', '#', '*', 'y'};
         final char[] result = Caesar.decodeChars(sourceChars, TEST_SHIFT);
 
-        final char[] expectedResult = {'M', 'y', ' ', 'w', 'i', 'l', 'd', ' ', 'l', 'o', 'v', 'e'};
-        assertArrayEquals(expectedResult, result);
+        final char[] expected = {'M', 'y', ' ', 'w', 'i', 'l', 'd', ' ', 'l', 'o', 'v', 'e'};
+        assertArrayEquals(expected, result);
     }
 
     @Test (timeout = 1000)
@@ -83,8 +84,8 @@ public class CaesarTest {
         final String sourceString = "a##\"4#z4U uvu!u";
         final String result = Caesar.decodeString(sourceString, TEST_SHIFT);
 
-        final String expectedResult = "Moon of Alabama";
-        assertEquals(expectedResult, result);
+        final String expected = "Moon of Alabama";
+        assertEquals(expected, result);
     }
 
     @Test (timeout = 1000)
